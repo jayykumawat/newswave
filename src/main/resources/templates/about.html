@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — NewsWave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Source Sans 3',sans-serif; background:#f0f4f8; color:#1a1a1a; }
+
+        /* NAVBAR */
+        .navbar { background:#fff; border-bottom:3px solid #1d4ed8; padding:0 40px; display:flex; align-items:center; justify-content:space-between; height:65px; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+        .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+        .logo-icon { background:#1d4ed8; color:white; width:38px; height:38px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.2em; font-weight:900; }
+        .logo-text { font-family:'Playfair Display',serif; font-size:1.5em; font-weight:800; color:#1a1a2e; }
+        .logo-text span { color:#1d4ed8; }
+        .nav-links { display:flex; gap:24px; }
+        .nav-links a { text-decoration:none; font-size:.85em; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:.5px; transition:color .2s; }
+        .nav-links a:hover, .nav-links a.active { color:#1d4ed8; }
+
+        /* HERO */
+        .page-hero { background:linear-gradient(135deg,#1e2761,#1d4ed8); padding:60px 40px; text-align:center; }
+        .page-hero h1 { font-family:'Playfair Display',serif; font-size:2.8em; font-weight:800; color:#fff; margin-bottom:12px; }
+        .page-hero p { font-size:1.05em; color:#bfdbfe; max-width:600px; margin:0 auto; line-height:1.7; }
+
+        /* CONTAINER */
+        .container { max-width:960px; margin:40px auto; padding:0 30px 60px; }
+
+        /* CARDS */
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px; }
+        .about-card { background:#fff; border-radius:12px; padding:28px; border:1px solid #e2e8f0; border-top:3px solid #1d4ed8; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+        .about-card .icon { font-size:2em; margin-bottom:14px; }
+        .about-card h3 { font-family:'Playfair Display',serif; font-size:1.2em; font-weight:700; color:#1a1a2e; margin-bottom:10px; }
+        .about-card p { font-size:.9em; color:#64748b; line-height:1.7; }
+
+        /* MISSION */
+        .mission-box { background:#fff; border-radius:12px; padding:36px; border:1px solid #e2e8f0; margin-bottom:32px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+        .mission-box h2 { font-family:'Playfair Display',serif; font-size:1.8em; font-weight:800; color:#1a1a2e; margin-bottom:14px; }
+        .mission-box p { font-size:1em; color:#64748b; line-height:1.8; max-width:700px; margin:0 auto; }
+
+        /* TECH STACK */
+        .tech-section { background:#fff; border-radius:12px; padding:28px; border:1px solid #e2e8f0; margin-bottom:32px; }
+        .tech-section h2 { font-family:'Playfair Display',serif; font-size:1.4em; font-weight:700; color:#1a1a2e; margin-bottom:20px; }
+        .tech-tags { display:flex; flex-wrap:wrap; gap:10px; }
+        .tech-tag { background:#eff6ff; color:#1d4ed8; padding:8px 18px; border-radius:20px; font-size:.85em; font-weight:700; border:1px solid #bfdbfe; }
+
+        /* STATS */
+        .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px; }
+        .stat-box { background:#1d4ed8; border-radius:12px; padding:24px; text-align:center; }
+        .stat-box .num { font-family:'Playfair Display',serif; font-size:2.2em; font-weight:800; color:#fff; }
+        .stat-box .lbl { font-size:.8em; color:#bfdbfe; margin-top:4px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; }
+
+        /* FOOTER */
+        .footer { background:#1a1a2e; color:#64748b; text-align:center; padding:24px; font-size:.82em; margin-top:40px; }
+        .footer strong { color:#93c5fd; }
+        .footer a { color:#64748b; text-decoration:none; margin:0 10px; }
+        .footer a:hover { color:#93c5fd; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a class="logo" href="/">
+            <div class="logo-icon">N</div>
+            <span class="logo-text">News<span>Wave</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about" class="active">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="page-hero">
+        <h1>About NewsWave</h1>
+        <p>A real-time news platform built with Java Spring Boot — delivering the latest headlines from India and around the world, updated on every page refresh.</p>
+    </div>
+
+    <!-- MAIN -->
+    <div class="container">
+
+        <!-- MISSION -->
+        <div class="mission-box">
+            <h2>Our Mission</h2>
+            <p>NewsWave was built to solve a simple problem — existing news platforms overwhelm users with too much content, ads, and distractions. We believe in delivering only the most relevant, categorized, and real-time news in a clean, professional interface. No clutter. No ads. Just news.</p>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats">
+            <div class="stat-box">
+                <div class="num">2</div>
+                <div class="lbl">APIs Integrated</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">7</div>
+                <div class="lbl">News Categories</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">30+</div>
+                <div class="lbl">Articles / Page</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">∞</div>
+                <div class="lbl">Live Updates</div>
+            </div>
+        </div>
+
+        <!-- ABOUT CARDS -->
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="icon">🎯</div>
+                <h3>What is NewsWave?</h3>
+                <p>NewsWave is a web-based news aggregation application that fetches live news from multiple APIs and displays them in a structured, user-friendly layout — similar to professional news portals like The Hindu or NDTV.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">🔥</div>
+                <h3>Trending News</h3>
+                <p>The homepage features a real-time "Trending in India" section showing the top 10 latest news articles with photos, updated dynamically every time the page is loaded.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">🛡️</div>
+                <h3>Dual API Fallback</h3>
+                <p>NewsWave uses a smart fallback system — NewsData.io for India-specific news and NewsAPI for international content. If one API fails, the other automatically takes over without any disruption.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">🌙</div>
+                <h3>Dark & Light Mode</h3>
+                <p>Switch between dark and light themes with a single click. Your preference is saved in the browser so the same theme appears every time you visit — no need to toggle again.</p>
+            </div>
+        </div>
+
+        <!-- TECH STACK -->
+        <div class="tech-section">
+            <h2>⚙️ Technology Stack</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">Java 17</span>
+                <span class="tech-tag">Spring Boot 3.5</span>
+                <span class="tech-tag">Thymeleaf</span>
+                <span class="tech-tag">Maven</span>
+                <span class="tech-tag">NewsAPI</span>
+                <span class="tech-tag">NewsData.io</span>
+                <span class="tech-tag">Jackson ObjectMapper</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Spring MVC</span>
+                <span class="tech-tag">REST API</span>
+            </div>
+        </div>
+
+        <!-- DEVELOPER -->
+        <div class="about-card" style="text-align:center; padding:36px;">
+            <div class="icon">👨‍💻</div>
+            <h3>Developer</h3>
+            <p style="margin-top:10px;"><strong style="color:#1a1a2e;font-size:1.1em;">Jay Kumawat</strong></p>
+            <p style="margin-top:6px;">BCA IV Semester &nbsp;|&nbsp; Roll No: PU01724EUG00734</p>
+            <p style="margin-top:4px;">Mandsaur University, Mandsaur (M.P.)</p>
+            <p style="margin-top:4px;">Minor Project — 24BCA750P</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2026 <strong>NewsWave</strong> — Powered by NewsAPI · NewsData.io · Spring Boot · Java</p>
+        <p style="margin-top:8px;">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </p>
+    </div>
+
+</body>
+</html>
